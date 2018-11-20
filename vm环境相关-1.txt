@@ -1,0 +1,254 @@
+﻿安装ssh
+1安装ssh
+sudo apt-get update
+2安装openssh-server
+sudo apt-get install openssh-server
+3. 查看查看ssh服务是否启动
+打开"终端窗口"，输入"sudo ps -e |grep ssh"-->回车-->有sshd,说明ssh服务已经启动，如果没有启动，输入"sudo service ssh start"-->回车-->ssh服务就会启动。
+=============
+修改清华源
+1? 备份原来的更新源
+Sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
+如果提示权限不够就输入下面两行，先进入到超级用户，再备份
+sudo -s
+cp /etc/apt/sources.list /etc/apt/sources.list.backup
+2 先安装vim，再 修改更新源
+sudo apt-get install vim
+sudo vi /etc/apt/sources.list
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial universe
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates universe
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security universe
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security multiverse
+3? 让更新源生效
+sudo apt-get update
+=========
+安装pycharm
+1下载
+cd ~/Downloads
+2解压，命令将会把 PyCharm 软件安装在 home 目录中。
+tar -xvzf pycharm-professional-2016.2.3.tar.gz -C ~
+3运行
+cd pycharm-2016.2.3/bin
+sh pycharm.sh &
+4激活
+vi /etc/hosts
+0.0.0.0 account.jetbrains.com 加到最后
+
+激活码有效期为2019-05-04，
+K71U8DBPNE-eyJsaWNlbnNlSWQiOiJLNzFVOERCUE5FIiwibGljZW5zZWVOYW1lIjoibGFuIHl1IiwiYXNzaWduZWVOYW1lIjoiIiwiYXNzaWduZWVFbWFpbCI6IiIsImxpY2Vuc2VSZXN0cmljdGlvbiI6IkZvciBlZHVjYXRpb25hbCB1c2Ugb25seSIsImNoZWNrQ29uY3VycmVudFVzZSI6ZmFsc2UsInByb2R1Y3RzIjpbeyJjb2RlIjoiSUkiLCJwYWlkVXBUbyI6IjIwMTktMDUtMDQifSx7ImNvZGUiOiJSUzAiLCJwYWlkVXBUbyI6IjIwMTktMDUtMDQifSx7ImNvZGUiOiJXUyIsInBhaWRVcFRvIjoiMjAxOS0wNS0wNCJ9LHsiY29kZSI6IlJEIiwicGFpZFVwVG8iOiIyMDE5LTA1LTA0In0seyJjb2RlIjoiUkMiLCJwYWlkVXBUbyI6IjIwMTktMDUtMDQifSx7ImNvZGUiOiJEQyIsInBhaWRVcFRvIjoiMjAxOS0wNS0wNCJ9LHsiY29kZSI6IkRCIiwicGFpZFVwVG8iOiIyMDE5LTA1LTA0In0seyJjb2RlIjoiUk0iLCJwYWlkVXBUbyI6IjIwMTktMDUtMDQifSx7ImNvZGUiOiJETSIsInBhaWRVcFRvIjoiMjAxOS0wNS0wNCJ9LHsiY29kZSI6IkFDIiwicGFpZFVwVG8iOiIyMDE5LTA1LTA0In0seyJjb2RlIjoiRFBOIiwicGFpZFVwVG8iOiIyMDE5LTA1LTA0In0seyJjb2RlIjoiR08iLCJwYWlkVXBUbyI6IjIwMTktMDUtMDQifSx7ImNvZGUiOiJQUyIsInBhaWRVcFRvIjoiMjAxOS0wNS0wNCJ9LHsiY29kZSI6IkNMIiwicGFpZFVwVG8iOiIyMDE5LTA1LTA0In0seyJjb2RlIjoiUEMiLCJwYWlkVXBUbyI6IjIwMTktMDUtMDQifSx7ImNvZGUiOiJSU1UiLCJwYWlkVXBUbyI6IjIwMTktMDUtMDQifV0sImhhc2giOiI4OTA4Mjg5LzAiLCJncmFjZVBlcmlvZERheXMiOjAsImF1dG9Qcm9sb25nYXRlZCI6ZmFsc2UsImlzQXV0b1Byb2xvbmdhdGVkIjpmYWxzZX0=-Owt3/+LdCpedvF0eQ8635yYt0+ZLtCfIHOKzSrx5hBtbKGYRPFDrdgQAK6lJjexl2emLBcUq729K1+ukY9Js0nx1NH09l9Rw4c7k9wUksLl6RWx7Hcdcma1AHolfSp79NynSMZzQQLFohNyjD+dXfXM5GYd2OTHya0zYjTNMmAJuuRsapJMP9F1z7UTpMpLMxS/JaCWdyX6qIs+funJdPF7bjzYAQBvtbz+6SANBgN36gG1B2xHhccTn6WE8vagwwSNuM70egpahcTktoHxI7uS1JGN9gKAr6nbp+8DbFz3a2wd+XoF3nSJb/d2f/6zJR8yJF8AOyb30kwg3zf5cWw==-MIIEPjCCAiagAwIBAgIBBTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE1MTEwMjA4MjE0OFoXDTE4MTEwMTA4MjE0OFowETEPMA0GA1UEAwwGcHJvZDN5MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQC9WZuYgQedSuOc5TOUSrRigMw4/+wuC5EtZBfvdl4HT/8vzMW/oUlIP4YCvA0XKyBaCJ2iX+ZCDKoPfiYXiaSiH+HxAPV6J79vvouxKrWg2XV6ShFtPLP+0gPdGq3x9R3+kJbmAm8w+FOdlWqAfJrLvpzMGNeDU14YGXiZ9bVzmIQbwrBA+c/F4tlK/DV07dsNExihqFoibnqDiVNTGombaU2dDup2gwKdL81ua8EIcGNExHe82kjF4zwfadHk3bQVvbfdAwxcDy4xBjs3L4raPLU3yenSzr/OEur1+jfOxnQSmEcMXKXgrAQ9U55gwjcOFKrgOxEdek/Sk1VfOjvS+nuM4eyEruFMfaZHzoQiuw4IqgGc45ohFH0UUyjYcuFxxDSU9lMCv8qdHKm+wnPRb0l9l5vXsCBDuhAGYD6ss+Ga+aDY6f/qXZuUCEUOH3QUNbbCUlviSz6+GiRnt1kA9N2Qachl+2yBfaqUqr8h7Z2gsx5LcIf5kYNsqJ0GavXTVyWh7PYiKX4bs354ZQLUwwa/cG++2+wNWP+HtBhVxMRNTdVhSm38AknZlD+PTAsWGu9GyLmhti2EnVwGybSD2Dxmhxk3IPCkhKAK+pl0eWYGZWG3tJ9mZ7SowcXLWDFAk0lRJnKGFMTggrWjV8GYpw5bq23VmIqqDLgkNzuoog==
+
+============
+## 政策爬虫部署文档
+启动命令
+python /home/ubuntu/git/zhengce-crawler/zcrawler/manage.py runserver --noreload 0.0.0.0:8000
+
+## 说明
+本文档主要用于政策爬虫项目的部署
+- 部署环境：
+? - Ubuntu 16.04
+? - Python 3.6+
+? - PostgreSQL
+? - Mongodb
+? - Supervisoor 3.0以上
+
+
+## ！注意
+**文档内? `安装的根目录` 须改为具体项目安装根目录**
+**以用户ubuntu创建，或者修改部署文档对应用户ubuntu为指定用户**
+
+
+##? 1. 基本安装
+#### 1.1 更新软件源
+```
+$ sudo apt-get update
+$ sudo apt-get upgrade
+```
+#### 1.2 安装基础依赖
+```
+$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev git
+```
+#### 1.4 安装 PostgreSQL
+```
+$ sudo apt-get install postgresql
+```
+#### 1.5 创建数据库和用户
+进入PostgreSQL数据库：`$ sudo -u postgres psql`，
+创建用户 zcrawler：
+```
+create user zcrawler with password 'qcqc2604#';
+```
+创建数据库 zcrawler：
+```
+create database zcrawler owner zcrawler;
+```
+数据库绑定用户：
+```
+grant all privileges on database zcrawler to zcrawler;
+```
+\q
+#### 1.3 安装mongodb
+```
+$ sudo apt-get install -y mongodb
+$ sudo service mongodb start
+（mkdir mongo
+mongod --dbpath mongo/）
+```
+####? 1.4 安装supervisor
+```
+$ sudo apt-get install -y supervisor
+sudo unlink /var/run/supervisor.sock
+$ sudo supervisord -c /etc/supervisor/supervisord.conf
+```
+#### 1.5 安装Chrome
+依次执行以下命令
+```
+$ sudo wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+$ sudo echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+$ sudo apt-get update
+$ sudo apt-get -y install google-chrome-stable
+```
+#### 1.5 安装Python3.6
+```
+# 安装 pyenv
+$ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+$ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
+$ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+$ echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+$ source ~/.bash_profile
+# 安装 pyenv-virtualenv
+$ git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+$ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
+$ source ~/.bash_profile
+# 安装python 3.6.1
+$ pyenv install 3.6.1
+# 创建虚拟环境
+$ pyenv virtualenv 3.6.1 zhengce
+```
+
+
+## 2.项目安装
+进入项目
+```
+$ cd /安装的根目录/
+```
+签出库代码，需要按提示输入账号密码。
+```
+$ git clone https://git.coding.net/qichang/qcrawler.git
+junjun.wan@southintel.com
+666666
+```
+签出版本，下文的 X.Y.Z 需要替换为真正的版本号。
+```
+$ cd qcrawler
+$ git checkout -b X.Y.Z
+```
+签出项目代码
+```
+$ cd /安装的根目录/
+git clone https://git.coding.net/qichang/zhengce-crawler.git
+```
+签出版本，下文的 X.Y.Z 需要替换为真正的版本号。
+```
+$ cd zhengce-crawler
+$ git checkout -b X.Y.Z
+```
+```
+# 进入项目
+$ cd /安装的根目录/
+# 激活虚拟环境，注意，每次建立 SSH 连都需要激活一下。
+$ pyenv local zhengce
+# 安装版本控制
+$ pip install pipenv
+# 安装库
+$ cd qcrawler/
+$ python setup.py develop
+# 进入项目
+$ cd ../zhengce-crawler/
+# 安装依赖
+$ pipenv install
+退回2.0
+pip install Django==2.0
+# 修改 settings
+cd zcrawler
+$ cp zcrawler/local_settings_template.py zcrawler/local_settings.py
+然后用你熟悉的编辑器编辑 zcrawler/local_settings.py
+添加STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# 初始化
+
+pip install psycopg2-binary
+(python manage.py makemigrations 
+可能要重装pymongo)
+$ python manage.py migrate
+
+$ python manage.py collectstatic --noinput
+# 按照提示创建后台管理员
+$ python manage.py createsuperuser --username=admin
+627541483@qq.com
+Aa111111
+chromedriver软连接
+cd ..
+ln -s chromedriver-linux chromedriver
+chmod +x chromedriver
+
+```
+配置启动项
+```
+$ cd /安装的根目录/zhengce-crawler/deploy/
+$ cp manage_template.conf manage.conf
+```
+然后用你熟悉的编辑器编辑 manage.conf。
+把启动配置链接到系统目录
+```
+$ sudo ln -s /home/安装的根目录/zhengce-crawler/deploy/manage.conf /etc/supervisor/conf.d/zc_manage.conf
+
+```
+启动 supervisor 任务
+```
+$ sudo supervisorctl reload
+$ sudo supervisorctl restart zc_manage
+```
+
+测试，启动任意浏览器，输入 `http://IP:8000/admin`，记得把IP替换为对应的服务器IP，并确保端口 8000 没有被防火墙挡住。
+应该可以看到后台的界面，尝试用之创建的 admin 账号密码试试，应该可以登陆成功。(admin:Aa111111)
+## 3. 更新
+junjun.wan@southintel.com
+先激活环境
+```
+$ cd /安装的根目录/
+$ pyenv local zhengce
+```
+签出版本，下文的 X.Y.Z 需要替换为真正的版本号。
+```
+$ cd /安装的根目录/
+$ cd qcrawler
+$ git pull
+$ git checkout -b X.Y.Z
+$ python setup.py develop
+```
+签出版本，下文的 X.Y.Z 需要替换为真正的版本号。
+```
+$ cd /安装的根目录/
+$ cd zhengce-crawler
+$ git pull
+$ git checkout -b X.Y.Z
+$ cd zcrawler
+$ python manage.py migrate
+```
+如果只更新了`qcrawler`也需要执行部分更新项目的操作。
+```
+$ cd /安装的根目录/
+$ cd zhengce-crawler
+$ cd zcrawler
+$ python manage.py migrate
+```
+重启 supervisor 任务
+```
+$ sudo supervisorctl restart zc_manage
+```
+并测试。
